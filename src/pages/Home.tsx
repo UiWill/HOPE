@@ -83,17 +83,17 @@ function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">𝓢𝓽𝓾𝓭𝓲𝓸</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <img 
-              src="/img/studio/1.png" 
+              src="/HOPE/img/studio/1.png" 
               alt="Tattoo studio" 
               className="w-full h-80 object-cover hover:opacity-75 transition-opacity"
             />
             <img 
-              src="/img/studio/2.png" 
+              src="/HOPE/img/studio/2.png" 
               alt="Tattoo studio" 
               className="w-full h-80 object-cover hover:opacity-75 transition-opacity"
             />
             <img 
-              src="/img/studio/3.png" 
+              src="/HOPE/img/studio/3.png" 
               alt="Tattoo studio" 
               className="w-full h-80 object-cover hover:opacity-75 transition-opacity"
             />

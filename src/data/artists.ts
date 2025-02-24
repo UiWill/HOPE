@@ -25,8 +25,8 @@ export const artists = [
     specialty: "𝐵𝑜𝑑𝑦 𝑝𝑖𝑒𝑟𝑐𝑒𝑟",
     instagram: "@thaylorpiercer",
     whatsapp: "5537998168917",
-    image: "/img/taylor.png", // Caminho relativo dentro da pasta public
-    profileImage: "/img/taylor.png",
+    image: "/HOPE/img/taylor.png", // Caminho relativo dentro da pasta public
+    profileImage: "HOPE//img/taylor.png",
     bio: "Com vasta experiência na arte da perfuração corporal, Thaylor Vinicius é referência em Body Piercing seguro, higiênico e personalizado. Sempre atualizado com as melhores técnicas do mercado, já realizou diversos cursos e treinamentos para garantir um atendimento preciso, confortável e de alta qualidade.",
     gallery: [
       "https://images.unsplash.com/photo-1590246814982-176c10608715?auat&fit=crop&q=80",
@@ -44,7 +44,7 @@ export const artists = [
     specialty: "Old School & Tradicional",
     instagram: "@oliveira.inkk",
     whatsapp: "5537988339961",
-    image: "/img/oliveira.png", // Caminho relativo dentro da pasta public
+    image: "/HOPE/img/oliveira.png", // Caminho relativo dentro da pasta public
     profileImage: "/img/oliveira.png",
     bio: "⚜️Mais de 100 fechamentos concluídos!.",
     gallery: [
@@ -63,7 +63,7 @@ export const artists = [
     specialty: "Realismo",
     instagram: "@marcoalmeidatattoo",
     whatsapp: "5537998434213",
-    image: "/img/marcus.png", // Caminho relativo dentro da pasta public
+    image: "/HOPE/img/marcus.png", // Caminho relativo dentro da pasta public
     profileImage: "/img/marcus.png",
     bio: "⚜️Mais de 100 fechamentos concluídos!.",
     gallery: [
@@ -82,7 +82,7 @@ export const artists = [
     specialty: "Oriental & tradicional",
     instagram: "@gui_tattoo.bd",
     whatsapp: "5537998434856",
-    image: "/img/gui.png", // Caminho relativo dentro da pasta public
+    image: "/HOPE/img/gui.png", // Caminho relativo dentro da pasta public
     profileImage: "/img/gui.png",
     bio: "⚜️| Tatuador • Há mais de 10 anos aumentando sua autoestima.",
     gallery: [
