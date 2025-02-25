@@ -37,6 +37,7 @@ export const artists = [
       "https://images.unsplash.com/photo-18ef209d87c5?"
     ]
   },
+  /*
   {
     id: "Mateus-Oliveira",
     name: "Mateus Oliveira",
@@ -94,4 +95,5 @@ export const artists = [
       "https://images.unsplash.c4849838019-85bb47f26286?auto=fofit=crop&q=80"
     ]
   }
+    */
 ];
