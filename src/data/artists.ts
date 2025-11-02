@@ -5,7 +5,7 @@ export const artists = [
     firstName: "Ravi",
     specialty: "Fineline & Blackwork",
     instagram: "@ravi_tattooo",
-    whatsapp: "5537981517911",
+    whatsapp: "553798151791",
     image: "/HOPE/img/ravi.png",
     profileImage: "/HOPE/img/ravi.png",
     bio: "Meu nome é Ravi Cabral Pessoa, vencedor do primeiro lugar do Prêmio Foguete Digital 2024 da cidade de Bom Despacho na categoria Tatuador! Atuo na área há 5 anos, e neste tempo fiz mais de 10 cursos e workshops de tatuagem em 3 estados diferentes! Trabalhei também ao lado de um dos melhores do Brasil, Lucas Webber. Resultados comprovados por vários clientes! Espaço aconchegante, para proporcionar a você um maior conforto e segurança na hora do procedimento.",
