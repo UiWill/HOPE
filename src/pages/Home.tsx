@@ -166,8 +166,8 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="gallery-image aspect-[3/4] overflow-hidden">
               <img
-                src="/HOPE/img/studio/1.png"
-                alt="Studio HOPE"
+                src="/HOPE/img/HOPE CENTER.jpg"
+                alt="HOPE CENTER - Studio"
                 className="w-full h-full object-cover"
               />
             </div>
