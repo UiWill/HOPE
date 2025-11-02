@@ -5,10 +5,10 @@ export const artists = [
     firstName: "Ravi",
     specialty: "Fineline & Blackwork",
     instagram: "@ravi_tattooo",
-    whatsapp: "5537999999991",
-    image: "/HOPE/img/ravi.png", // Caminho relativo dentro da pasta public
+    whatsapp: "5537981517911",
+    image: "/HOPE/img/ravi.png",
     profileImage: "/HOPE/img/ravi.png",
-    bio: "Meu nome é Ravi Cabral Pessoa, vencedor do primeiro lugar do Prêmio Foguete Digital 2024 da cidade de Bom Despacho na categoria Tatuador! Atuo na área há 5 anos, e neste tempo fiz mais de 10 cursos e workshops de tatuagem em 3 estados diferentes! Trabalhei também ao lado de um dos melhores do Brasil, Lucas Webber. Resultados comprovados por vários clientes! Espaço aconchegante, para proporcionar a você um maior conforto e segurança na hora do procedimento..",
+    bio: "Meu nome é Ravi Cabral Pessoa, vencedor do primeiro lugar do Prêmio Foguete Digital 2024 da cidade de Bom Despacho na categoria Tatuador! Atuo na área há 5 anos, e neste tempo fiz mais de 10 cursos e workshops de tatuagem em 3 estados diferentes! Trabalhei também ao lado de um dos melhores do Brasil, Lucas Webber. Resultados comprovados por vários clientes! Espaço aconchegante, para proporcionar a você um maior conforto e segurança na hora do procedimento.",
     gallery: [
       "/HOPE/img/tat_ravi/1.png",
       "/HOPE/img/tat_ravi/2.png",
@@ -21,11 +21,11 @@ export const artists = [
   {
     id: "Thaylor-Vinicius",
     name: "Thaylor Vinicius",
-    firstName: "thaylor",
+    firstName: "Thaylor",
     specialty: "𝐵𝑜𝑑𝑦 𝑝𝑖𝑒𝑟𝑐𝑒𝑟",
     instagram: "@thaylorpiercer",
     whatsapp: "5537998168917",
-    image: "/HOPE/img/taylor.png", // Caminho relativo dentro da pasta public
+    image: "/HOPE/img/taylor.png",
     profileImage: "/HOPE/img/taylor.png",
     bio: "Com vasta experiência na arte da perfuração corporal, Thaylor Vinicius é referência em Body Piercing seguro, higiênico e personalizado. Sempre atualizado com as melhores técnicas do mercado, já realizou diversos cursos e treinamentos para garantir um atendimento preciso, confortável e de alta qualidade.",
     gallery: [
@@ -35,6 +35,27 @@ export const artists = [
       "https://images.unsplash.com/photo-1494849838019-85bb47f26286?",
       "https://images.unspla1686290-a8ef209d87c5?",
       "https://images.unsplash.com/photo-18ef209d87c5?"
+    ]
+  },
+  {
+    id: "Fael",
+    name: "Fael",
+    firstName: "Fael",
+    specialty: "Barber Shop",
+    instagram: "@fael_barber",
+    whatsapp: "",
+    bookingUrl: "https://sites.appbarber.com",
+    appDownloadUrl: "https://appbarber.com.br/download",
+    image: "/HOPE/img/Fael.jpg",
+    profileImage: "/HOPE/img/Fael.jpg",
+    bio: "Barbeiro profissional especializado em cortes modernos e clássicos. Com anos de experiência, oferece um atendimento personalizado e de qualidade. Agende seu horário através do sistema de agendamento online!",
+    gallery: [
+      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?fit=crop&q=80",
+      "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?fit=crop&q=80",
+      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?fit=crop&q=80",
+      "https://images.unsplash.com/photo-1621605815971-fbc98d665033?fit=crop&q=80",
+      "https://images.unsplash.com/photo-1599351431613-4e50c94b2fc7?fit=crop&q=80",
+      "https://images.unsplash.com/photo-1621607512214-68297480165e?fit=crop&q=80"
     ]
   },
   /*
