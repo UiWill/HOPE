@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, MapPin, Clock, MessageCircle, Send, Mail } from 'lucide-react';
 import { artists } from '../data/artists';
@@ -16,6 +16,27 @@ function Home() {
     error: false,
     message: ''
   });
+
+  // Scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-fade-in-left, .scroll-fade-in-right, .scroll-scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -85,22 +106,22 @@ function Home() {
       {/* About Section */}
       <section className="white-section py-24 md:py-32 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 font-didot text-black">NOSSA ARTE, SUA HISTÓRIA</h2>
-          <p className="text-base md:text-lg mb-12 md:mb-16 leading-relaxed text-gray-700">
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 font-didot text-black scroll-fade-in">NOSSA ARTE, SUA HISTÓRIA</h2>
+          <p className="text-base md:text-lg mb-12 md:mb-16 leading-relaxed text-gray-700 scroll-fade-in">
             No Hope Tattoo Studio, transformamos suas ideias em arte permanente.
             Com uma equipe de artistas talentosos e experientes, criamos tatuagens
             únicas que contam sua história através da nossa arte.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300">
+            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300 scroll-fade-in-left">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 font-didot text-black">ORIGINALIDADE</h3>
               <p className="text-gray-600 text-sm md:text-base">Designs exclusivos e personalizados para cada cliente</p>
             </div>
-            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300">
+            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300 scroll-scale-in">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 font-didot text-black">EXPERIÊNCIA</h3>
               <p className="text-gray-600 text-sm md:text-base">Anos de expertise em diferentes estilos de tatuagem</p>
             </div>
-            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300">
+            <div className="p-6 md:p-8 bg-gray-50 border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300 scroll-fade-in-right">
               <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 font-didot text-black">SEGURANÇA</h3>
               <p className="text-gray-600 text-sm md:text-base">Ambiente esterilizado e materiais de alta qualidade</p>
             </div>
@@ -111,11 +132,11 @@ function Home() {
       {/* Artists Section */}
       <section id="artists" className="light-section py-24 md:py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black">NOSSOS ARTISTAS</h2>
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black scroll-fade-in">NOSSOS ARTISTAS</h2>
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl">
-              {artists.map((artist) => (
-                <div key={artist.id} className="artist-card p-6 rounded-lg">
+              {artists.map((artist, index) => (
+                <div key={artist.id} className="artist-card p-6 rounded-lg scroll-scale-in" style={{ transitionDelay: `${index * 0.1}s` }}>
                   <Link to={`/artist/${artist.id}`} className="block group">
                     <div className="relative overflow-hidden mb-6 rounded-md">
                       <img
@@ -133,9 +154,9 @@ function Home() {
                       href={`https://wa.me/${artist.whatsapp}?text=Olá%20${artist.firstName},%20gostaria%20de%20agendar%20um%20horário!`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
+                      className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded btn-hover-lift"
                     >
-                      <MessageCircle size={20} />
+                      <MessageCircle size={20} className="icon-bounce" />
                       Contato WhatsApp
                     </a>
                   ) : (
@@ -143,9 +164,9 @@ function Home() {
                       href={artist.bookingUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
+                      className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded btn-hover-lift"
                     >
-                      <Send size={20} />
+                      <Send size={20} className="icon-bounce" />
                       Agendar Horário
                     </a>
                   )}
@@ -159,8 +180,8 @@ function Home() {
       {/* Gallery Section */}
       <section className="white-section py-24 md:py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black">NOSSO ESTÚDIO</h2>
-          <p className="text-center text-base md:text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black scroll-fade-in">NOSSO ESTÚDIO</h2>
+          <p className="text-center text-base md:text-lg text-gray-600 mb-12 max-w-2xl mx-auto scroll-fade-in">
             Conheça o ambiente aconchegante e profissional onde a magia acontece
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -204,7 +225,7 @@ function Home() {
       {/* Join Our Team Section */}
       <section id="join" className="light-section py-24 md:py-32 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black">JUNTE-SE À NOSSA EQUIPE</h2>
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black scroll-fade-in">JUNTE-SE À NOSSA EQUIPE</h2>
           <p className="text-center text-base md:text-lg mb-10 md:mb-12 text-gray-700">
             Você é um tatuador talentoso ou um body piercer experiente? Estamos sempre em busca de novos artistas para fazer parte do nosso estúdio.
           </p>
@@ -302,10 +323,10 @@ function Home() {
             <div className="text-center">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center gap-2 bg-black text-white py-3 px-8 rounded-md hover:bg-gray-800 transition-all duration-300 font-medium"
+                className="inline-flex items-center justify-center gap-2 bg-black text-white py-3 px-8 rounded-md font-medium btn-hover-lift"
                 disabled={formStatus.submitted && !formStatus.error}
               >
-                <Send size={20} />
+                <Send size={20} className="icon-bounce" />
                 Enviar Candidatura
               </button>
             </div>
@@ -315,20 +336,37 @@ function Home() {
 
       {/* Contact Section */}
       <section className="white-section py-24 md:py-32 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black">LOCALIZAÇÃO E HORÁRIOS</h2>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="contact-info p-6 md:p-8 text-center rounded-lg">
-              <MapPin className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black"/>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="section-title text-3xl md:text-4xl font-bold mb-12 md:mb-16 text-center font-didot text-black scroll-fade-in">LOCALIZAÇÃO E HORÁRIOS</h2>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="contact-info p-6 md:p-8 text-center rounded-lg scroll-fade-in-left">
+              <MapPin className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black icon-pulse"/>
               <p className="text-gray-700 text-sm md:text-base">Av. São Vicente, 290 - Bom Despacho, MG</p>
             </div>
-            <div className="contact-info p-6 md:p-8 text-center rounded-lg">
-              <Clock className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black"/>
+            <div className="contact-info p-6 md:p-8 text-center rounded-lg scroll-scale-in">
+              <Clock className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black icon-spin"/>
               <p className="text-gray-700 text-sm md:text-base">Agende seu horário pelo WhatsApp!</p>
             </div>
-            <div className="contact-info p-6 md:p-8 text-center rounded-lg">
-              <Instagram className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black"/>
+            <div className="contact-info p-6 md:p-8 text-center rounded-lg scroll-fade-in-right">
+              <Instagram className="w-7 h-7 md:w-8 md:h-8 mx-auto mb-3 md:mb-4 text-black icon-bounce"/>
               <p className="text-gray-700 text-sm md:text-base">@hopetattoo</p>
+            </div>
+          </div>
+
+          {/* Google Maps */}
+          <div className="scroll-fade-in">
+            <h3 className="text-2xl font-bold mb-6 text-center font-didot text-black">Encontre-nos no Mapa</h3>
+            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200" style={{ height: '400px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.8!2d-45.2597!3d-19.7133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQyJzQ4LjAiUyA0NcKwMTUnMzUuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr&q=Av.+São+Vicente,+290+-+Bom+Despacho,+MG"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização HOPE Tattoo Studio"
+              />
             </div>
           </div>
         </div>
