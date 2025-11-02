@@ -47,8 +47,10 @@
 
 .hero-title {
   animation: textReveal 1.5s ease-out;
-  letter-spacing: 0.5em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-weight: 400;
+  line-height: 1;
 }
 
 .hero-logo {

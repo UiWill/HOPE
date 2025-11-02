@@ -70,12 +70,12 @@ function Home() {
       {/* Hero Section */}
       <header className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         <div className="relative text-center z-20 px-4">
-          <img
-            src="/HOPE/img/studio/hope.png"
-            alt="HOPE Tattoo & Piercing"
-            className="hero-logo"
-          />
-          <p className="text-xl md:text-2xl tracking-[0.3em] mb-8 font-didot text-gray-800">TATTOO - PIERCING - BARBER SHOP</p>
+          <h1 className="hero-title text-7xl md:text-8xl lg:text-9xl font-bold mb-6 font-didot text-black">
+            HOPE
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl tracking-[0.3em] mb-8 font-didot text-gray-800">
+            TATTOO - PIERCING - BARBER SHOP
+          </p>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Transformando arte em memórias permanentes
           </p>
